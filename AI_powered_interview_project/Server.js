@@ -7,14 +7,14 @@ const http = require("http");
 
 // Optional Dependencies with Safe Loading
 let cors, bcrypt, mongoose, multer, jwt, socketIo, nodemailer, rateLimit;
-try { cors = require("cors"); } catch (e) { console.warn("⚠️ cors missing, using default."); }
-try { bcrypt = require("bcrypt"); } catch (e) { console.warn("⚠️ bcrypt missing, auth disabled."); }
-try { mongoose = require("mongoose"); } catch (e) { console.warn("⚠️ mongoose missing, DB features disabled."); }
-try { multer = require("multer"); } catch (e) { console.warn("⚠️ multer missing, file uploads disabled."); }
-try { jwt = require("jsonwebtoken"); } catch (e) { console.warn("⚠️ jsonwebtoken missing, JWT auth disabled."); }
-try { socketIo = require("socket.io"); } catch (e) { console.warn("⚠️ socket.io missing, websockets disabled."); }
-try { nodemailer = require("nodemailer"); } catch (e) { console.warn("⚠️ nodemailer missing, email features disabled."); }
-try { rateLimit = require("express-rate-limit"); } catch (e) { console.warn("⚠️ express-rate-limit missing, rate limiting disabled."); }
+try { cors = require("cors"); } catch (e) { console.warn("⚠️ cors missing:", e.message); }
+try { bcrypt = require("bcrypt"); } catch (e) { console.warn("⚠️ bcrypt missing:", e.message); }
+try { mongoose = require("mongoose"); } catch (e) { console.warn("⚠️ mongoose missing:", e.message); }
+try { multer = require("multer"); } catch (e) { console.warn("⚠️ multer missing:", e.message); }
+try { jwt = require("jsonwebtoken"); } catch (e) { console.warn("⚠️ jsonwebtoken missing:", e.message); }
+try { socketIo = require("socket.io"); } catch (e) { console.warn("⚠️ socket.io missing:", e.message); }
+try { nodemailer = require("nodemailer"); } catch (e) { console.warn("⚠️ nodemailer missing:", e.message); }
+try { rateLimit = require("express-rate-limit"); } catch (e) { console.warn("⚠️ express-rate-limit missing:", e.message); }
 
 const crypto = require("crypto");
 let ffmpeg;
